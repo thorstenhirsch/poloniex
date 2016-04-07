@@ -32,8 +32,8 @@ module Poloniex
     get 'return24hVolume'
   end
 
-  def self.order_book( currency_pair )
-    get 'returnOrderBook', currencyPair: currency_pair
+  def self.order_book( currency_pair, params = {} )
+    get 'returnOrderBook', params.merge(currencyPair: currency_pair)
   end
 
   def self.trade_history( currency_pair )
